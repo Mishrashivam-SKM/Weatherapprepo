@@ -16,8 +16,9 @@ def get_weatherdata():
         'units' : request.form.get("units")
         }
     data_request = requests.get(url , params= parameter)
+    city = data['name']
     data = data_request.json()
-    return f"data :{data}"
+    return f"data :{data} city:"{city}"
 
 
 if __name__ == '__main__':
